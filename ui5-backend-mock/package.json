@@ -1,0 +1,22 @@
+{
+  "name": "ui5-backend-mock",
+  "version": "1.0.0",
+  "description": "Backend Test Server for UI5 Apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pabloamburi/ui5-backend-mock.git"
+  },
+  "author": "Pablo Amburi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pabloamburi/ui5-backend-mock/issues"
+  },
+  "homepage": "https://github.com/pabloamburi/ui5-backend-mock#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
