@@ -13,6 +13,14 @@
             "request": "launch",
             "runtimeExecutable": "npm",
             "cwd": "${workspaceFolder}/worklist.template",
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Start orders",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "cwd": "${workspaceFolder}/orders",
             "windows": {
                 "runtimeExecutable": "npm.cmd"
             },
@@ -33,6 +41,11 @@
             "request": "launch",
             "runtimeExecutable": "npm",
             "cwd": "${workspaceFolder}/worklist.template",
+            "name": "Start orders with UI5 Version",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "cwd": "${workspaceFolder}/orders",
             "windows": {
                 "runtimeExecutable": "npm.cmd"
             },
@@ -56,6 +69,10 @@
             "type": "node",
             "request": "launch",
             "cwd": "${workspaceFolder}/worklist.template",
+            "name": "Start orders Mock",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/orders",
             "runtimeExecutable": "npm",
             "windows": {
                 "runtimeExecutable": "npm.cmd"
@@ -74,6 +91,10 @@
             "type": "node",
             "request": "launch",
             "cwd": "${workspaceFolder}/worklist.template",
+            "name": "Start orders Mock with UI5 Version",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/orders",
             "runtimeExecutable": "npm",
             "windows": {
                 "runtimeExecutable": "npm.cmd"
@@ -95,6 +116,10 @@
             "type": "node",
             "request": "launch",
             "cwd": "${workspaceFolder}/worklist.template",
+            "name": "Start orders Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/orders",
             "runtimeExecutable": "npm",
             "windows": {
                 "runtimeExecutable": "npm.cmd"
@@ -110,4 +135,11 @@
         }
     ],
     "compounds": []
+    "inputs": [
+        {
+            "id": "UI5Version",
+            "type": "command",
+            "command": "sap.ux.appGenerator.ui5Version"
+        }
+    ]
 }
