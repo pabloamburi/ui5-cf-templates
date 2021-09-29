@@ -1,0 +1,61 @@
+<core:FragmentDefinition
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:table="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:layout="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+	xmlns="sap.m">
+
+    <Text text="{/titleSnappedContent/text}"/>
+    <!--layout:VerticalLayout>
+    <layout:HorizontalLayout>
+        <Input></Input>
+        <Select
+            forceSelection="false"
+            selectedKey="{/SelectedProduct}">
+            <core:Item key="1" text="Test" />
+            <core:Item key="2" text="Otro" />
+        </Select>
+        <ObjectStatus text="In Stock" state="{/objectDescription/status}" />
+    </layout:HorizontalLayout>	
+    </layout:VerticalLayout-->
+
+    <form:SimpleForm editable="true" backgroundDesign="Transparent" layout="ResponsiveGridLayout" labelSpanXL="4"
+    labelSpanL="4" labelSpanM="6" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+    columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
+    <core:Title text="Filtros" level="H4"></core:Title>
+    <!--Label text="{i18n>FILTER_ELIMINADOS}" labelFor="FILTER_DELETED"/>
+    <Switch id="FILTER_DELETED" state="{viewModel>/FILTER_Deleted}" customTextOn="Sí" customTextOff="No" change=".filterPTD_Table"/-->
+    <Label text="{i18n>FILTER_WORKTYPE}" labelFor="FILTER_WORKTYPE"/>
+    <Select selectedKey="{viewModel>/FILTER_Worktype}" change=".filterPTD_Table" items="{path: 'MasterDataHana>/TaskTypeSet'}" forceSelection="false">
+        <core:Item key="{MasterDataHana>INTCODE}" text="{MasterDataHana>DESCRIPTION}"/>
+    </Select>		
+    <Label text="{i18n>FILTER_DIVISION}" labelFor="FILTER_DIVISION"/>
+    <Select selectedKey="{viewModel>/FILTER_Division}" change=".filterPTD_Table" items="{path: 'MasterDataHana>/DivisionSet'}" forceSelection="false">
+        <core:Item key="{MasterDataHana>SSFFINTCODE}" text="{MasterDataHana>DISPLAYNAME} - {MasterDataHana>PTD_PLANT}"/>
+    </Select>		
+    
+    <core:Title></core:Title>
+    <Label text="{i18n>FILTER_STATUS}" labelFor="FILTER_STATUS"/>
+    <Select selectedKey="{viewModel>/FILTER_Status}" change=".filterPTD_Table" items="{path: 'MasterDataLocal>/Status'}" forceSelection="false">
+        <core:Item key="{MasterDataLocal>key}" text="{MasterDataLocal>name}"/>
+    </Select>	
+    <Label text="{i18n>FILTER_DATE}" labelFor="FILTER_DATE"/>
+    <DateRangeSelection
+      
+        dateValue="{path:'viewModel>/FILTER_DateFrom'}"
+        secondDateValue="{path:'viewModel>/FILTER_DateTo'}"
+        displayFormat="dd/MM/yyyy"
+        change=".filterPTD_Table"/>							
+</form:SimpleForm>
+
+<IconTabHeader mode="Inline">
+    <items>
+        <IconTabFilter key="info" text="Info" />
+        <IconTabFilter key="attachments" text="Attachments" count="3" />
+        <IconTabFilter key="notes" text="Notes" count="12" />
+        <IconTabFilter key="people" text="People"/>
+    </items>
+</IconTabHeader>
+</core:FragmentDefinition>    
